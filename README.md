@@ -1,5 +1,15 @@
 # Rails 5.1 REST-API ToDo App
 A todo list API where users can manage their to-do lists and todo items.
+
+## Summary of REST-API
+- Rails 5.1
+- Ruby 2.4.2
+- RSpec, FactoryBot
+- Faker for fake data.
+- Versioning.
+- Pagination.
+- Serialization.
+
 ```
 Endpoint 	                          Functionality
 POST          /signup 	            Signup
@@ -51,5 +61,16 @@ $ http DELETE :3000/todos/2/items/1
 ## Versioning
 We define a custom vendor media type application/vnd.todos.{version_number}+json giving clients the ability to choose which API version they require.
 
+# Pagination
+```
+# request without page
+$ http :3000/todos
+# request for page 1
+$ http :3000/todos page==1
+# request for page 2
+$ http :3000/todos page==2
+```
+
 ## TO BE DONE
 - add authentication
+https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-two

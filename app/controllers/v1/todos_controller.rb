@@ -5,7 +5,8 @@ module V1
 
     # GET /todos
     def index
-      @todos = Todo.all
+      # get paginated current user todos
+      @todos = Todo.all.paginate(page: params[:page], per_page: 20)
       json_response(@todos)
     end
 
