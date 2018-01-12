@@ -25,7 +25,7 @@ Generating controllers by default generates controller specs. However, we won't 
 
 Request specs are designed to drive behavior through the full stack, including routing. This means they can hit the applications' HTTP endpoints as opposed to controller specs which call methods directly. Since we're building an API application, this is exactly the kind of behavior we want from our tests.
 ```
-Use HTTPie for testing responses:
+Use HTTPie for testing responses for todos:
 ```
 # GET /todos
 $ http :3000/todos
@@ -36,3 +36,21 @@ $ http PUT :3000/todos/1 title=Beethoven
 # DELETE /todos/:id
 $ http DELETE :3000/todos/1
 ```
+Use HTTPie for testing responses for todo items:
+```
+# GET /todos/:todo_id/items
+$ http :3000/todos/2/items
+# POST /todos/:todo_id/items
+$ http POST :3000/todos/2/items name='Listen to 5th Symphony' done=false
+# PUT /todos/:todo_id/items/:id
+$ http PUT :3000/todos/2/items/1 done=true
+# DELETE /todos/:todo_id/items/1
+$ http DELETE :3000/todos/2/items/1
+```
+
+## Versioning
+We define a custom vendor media type application/vnd.todos.{version_number}+json giving clients the ability to choose which API version they require.
+
+
+## TO BE DONE
+- add authentication
