@@ -19,3 +19,9 @@ Run specs
 ```
 bundle exec rspec
 ```
+According to RSpec, official docs recommend writing request specs instead.
+```
+Generating controllers by default generates controller specs. However, we won't be writing any controller specs. We're going to write request specs instead.
+
+Request specs are designed to drive behavior through the full stack, including routing. This means they can hit the applications' HTTP endpoints as opposed to controller specs which call methods directly. Since we're building an API application, this is exactly the kind of behavior we want from our tests.
+```
