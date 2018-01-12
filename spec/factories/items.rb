@@ -1,5 +1,5 @@
 # spec/factories/items.rb
-FactoryBoy.define do
+FactoryBot.define do
   factory :item do
     name { Faker::Pokemon.name }
     done false
