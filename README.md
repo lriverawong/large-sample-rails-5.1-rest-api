@@ -51,6 +51,5 @@ $ http DELETE :3000/todos/2/items/1
 ## Versioning
 We define a custom vendor media type application/vnd.todos.{version_number}+json giving clients the ability to choose which API version they require.
 
-
 ## TO BE DONE
 - add authentication
