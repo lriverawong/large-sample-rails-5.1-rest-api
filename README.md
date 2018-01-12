@@ -25,3 +25,14 @@ Generating controllers by default generates controller specs. However, we won't 
 
 Request specs are designed to drive behavior through the full stack, including routing. This means they can hit the applications' HTTP endpoints as opposed to controller specs which call methods directly. Since we're building an API application, this is exactly the kind of behavior we want from our tests.
 ```
+Use HTTPie for testing responses:
+```
+# GET /todos
+$ http :3000/todos
+# POST /todos
+$ http POST :3000/todos title=Mozart created_by=1
+# PUT /todos/:id
+$ http PUT :3000/todos/1 title=Beethoven
+# DELETE /todos/:id
+$ http DELETE :3000/todos/1
+```
